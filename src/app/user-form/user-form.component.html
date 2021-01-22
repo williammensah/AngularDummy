@@ -1,0 +1,152 @@
+<div class="page-wrapper bg-red p-t-180 p-b-100 font-robo">
+  <div class="wrapper wrapper--w960">
+      <div class="card card-2">
+          <div class="card-heading"></div>
+          <div class="card-body">
+           <h2 class="title">Customer Registration Info</h2>
+           
+         
+             <form  #f="ngForm" (ngSubmit)="submit(f)"> 
+              <div class="form-group">
+                <label for="firstName">SurName </label>
+                <input 
+                required
+                ngModel name="surname"
+                #surName="ngModel"
+                class="form-control"
+                id="surName"
+                type="text" 
+                >
+                 <div 
+                    class="alert alert-danger" 
+                    *ngIf ="surName.touched &&!surName.valid">
+                     <div *ngIf="surName.errors.required">
+                      Surname field is required
+                    </div>
+                   
+                </div>  
+              </div>
+             
+              <div class="form-group">
+                <label for="OtherName">OtherName</label>
+                  <input 
+                  required
+                  ngModel name="othername"
+                  id="otherName"
+                  #otherName ="ngModel"
+                  type="text"
+                  class="form-control"  
+                  >
+                <div 
+                  class="alert alert-danger" 
+                  *ngIf ="otherName.touched &&!otherName.valid">
+                 <div *ngIf="otherName.errors.required">
+                  OtherName field is required
+                </div>
+               
+            </div>  
+              </div>
+
+              <div class="form-group">
+                <label for="Email">Email</label>
+                  <input 
+                  required
+                  ngModel name="email"
+                  id="email"
+                  #email ="ngModel"
+                  type="text"
+                  class="form-control"  
+                  >
+                <div 
+                  class="alert alert-danger" 
+                  *ngIf ="email.touched &&!email.valid">
+                 <div *ngIf="email.errors.required">
+                  email field is required
+                </div>
+               
+            </div>  
+              </div>
+
+              <div class="form-group">
+                <label for="mobile">Phone Number</label>
+                  <input 
+                  required
+                  ngModel name="mobile"
+                  id="mobile"
+                  #mobile ="ngModel"
+                  type="text"
+                  class="form-control"  
+                  >
+                <div 
+                  class="alert alert-danger" 
+                  *ngIf ="mobile.touched &&!mobile.valid">
+                 <div *ngIf="mobile.errors.required">
+                  Phone Number field is required
+                </div>
+               
+            </div>  
+              </div>
+
+              <div class="form-group">
+                <label for="contactMethod">Sex</label>
+                <select ngModel name="sex" id="sex" class="form-control" #sex="ngModel">
+                  <option value=""></option>
+                 <option value="male">male</option>
+                 <option value="female">female</option>
+                </select>
+
+                <div 
+                class="alert alert-danger" 
+                *ngIf ="sex.touched &&!sex.valid">
+               <div *ngIf="sex.errors.required">
+                Sex field is required
+              </div>
+             
+          </div> 
+            </div>
+          
+              <div class="form-group">
+                <label for="Region">Region</label>
+                  <input 
+                  required
+                  ngModel name="region"
+                  id="region"
+                  #region ="ngModel"
+                  type="text"
+                  class="form-control"  
+                  >
+                <div 
+                  class="alert alert-danger" 
+                  *ngIf ="region.touched &&!region.valid">
+                 <div *ngIf="region.errors.required">
+                    Region field is required
+                </div>
+               
+            </div>  
+              </div>
+
+              <div class="form-group">
+                <label for="city">City</label>
+                  <input 
+                  required
+                  ngModel name="city"
+                  id="city"
+                  #city ="ngModel"
+                  type="text"
+                  class="form-control"  
+                  >
+                <div 
+                  class="alert alert-danger" 
+                  *ngIf ="city.touched &&!city.valid">
+                 <div *ngIf="city.errors.required">
+                  City field is required
+                </div>
+            </div>  
+              </div>
+            <br><br>
+         <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+            </form>
+          </div>
+      </div>
+  </div>
+</div>

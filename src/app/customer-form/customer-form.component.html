@@ -1,0 +1,60 @@
+
+
+<div class="container" > 
+  <br><br>
+  <div class="row">
+    <div class="col-12"> 
+     <a routerLink="/customers">
+       <input type="button" class="btn btn-outline-primary float-right" value="create Customer"></a>
+    </div>
+</div>
+
+  <br><br><br>
+    <table class="container" >
+      <thead>
+        <tr>
+          <th><h1>SurName</h1></th>
+          <th><h1>OtherName</h1></th>
+          <th><h1>Email</h1></th>
+          <th><h1>Mobile</h1></th>
+          <th><h1>Action</h1></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers">
+          <td>{{customer.surname}}</td>
+          <td>{{customer.othername}}</td>
+          <td>{{customer.email}}</td>
+          <td>{{customer.mobile}}</td>
+          <td>
+            <a href="#" 
+            class="settings" 
+            title="Settings" 
+            data-toggle="tooltip">
+            <i class="material-icons">&#xE8B8;
+            </i>
+            </a>
+            <a href="#" 
+            class="delete" 
+            (click)="deleteCustomer(customer.id)"
+            title="Delete" 
+            data-toggle="tooltip">
+            <i class="material-icons">
+            &#xE5C9;
+            </i>
+            </a>
+         </td>
+        </tr>
+    
+      </tbody>
+    </table>
+</div>
+
+
+<!-- <ul class="list-group">
+  <li 
+  *ngFor="let customer of customers.data;"
+  class="list-group-item">
+  {{customer.surname}}
+</li>
+</ul> -->
